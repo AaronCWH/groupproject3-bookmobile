@@ -2,13 +2,11 @@ export {
     userA,
     userB,
     indexBooks,
-    swap,
-    reviews
+    swap
 };
 
 const userA = {
     userId: 3,
-    userImage: require("../assets/user.jpg"),
     username: 'Bob',
     email: 'abc123@hmail.com',
     password: "abcdefg",
@@ -18,113 +16,112 @@ const userA = {
 };
 
 const userB = {
-    userId: 4,
+    userId : 4,
     username: 'Aarontest',
     email: 'Aarontest@hmail.com',
     password: 'abcdefg',
     points: 100,
-    wishlist: [1, 2, 5],
+    wishlist: [1,2,5],
     type: 'USER'
 }
 
-// https://thegreatestbooks.org/the-greatest-fiction-since/1980
 const indexBooks = [
     {
         indexId: 1,
-        title: 'Beloved',
-        author: 'Toni Morrison',
+        title: 'Name of Book1',
+        author: 'Name of author1',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/rgbp8t53jgjxf52ibulydun84k0m',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 2,
-        title: 'Beloved',
-        author: 'Salman Rushdie',
+        title: 'Name of Book2 which is super bloody long all the way to landscape mode end',
+        author: 'Name of author2',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/c5ocu6hs583593c4k92ij9y71soe',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 5,
-        title: 'The Color Purple',
-        author: 'Alice Walker',
-        year: 1980,
-        genreId: 1,
-        // imageURL: {
-        //     uri: 'https://d3i5mgdwi2ze58.cloudfront.net/2v05vz7oibe2oh00d0jng1amrir9',
-        // }      
-        imageURL: null,
-    },
-    {
-        indexId: 7,
-        title: 'The Handmaids Tale',
-        author: 'Margaret Atwood',
+        title: 'Name of Book5',
+        author: 'Name of author5',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/tedjyaopg0lwwmpmt2bepq6kby7p',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
+        }
+
+    },
+    {
+        indexId: 7,
+        title: 'Name of Book7',
+        author: 'Name of author7',
+        year: 1980,
+        genreId: 1,
+        imageURL: {
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 9,
-        title: 'A Confederacy of Dunces',
-        author: 'John Kennedy Toole',
+        title: 'Name of Book9',
+        author: 'Name of author9',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/rstxal8xk784d7288orvapc0xogl',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 10,
-        title: 'Atonement',
-        author: 'Ian McEwan',
+        title: 'Name of Book10',
+        author: 'Name of author10',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/alnlrd2t0gt0y12ac1r8owz72kjx',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 23,
-        title: 'White Teeth',
-        author: 'Zadie Smith',
+        title: 'Name of Book23',
+        author: 'Name of author23',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/kkrgvs3k1xcg5y4wbjy12crve9ia',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 45,
-        title: 'Stories of Ernest Hemingway',
-        author: 'Ernest Hemingway',
+        title: 'Name of Book45',
+        author: 'Name of author45',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/5wf6o4u0ir8ackb0yfeycgzfpl54',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
     {
         indexId: 66,
-        title: ' Love in the Time of Cholera',
-        author: 'Gabriel Garcia Marquez',
+        title: 'Name of Book66',
+        author: 'Name of author66',
         year: 1980,
         genreId: 1,
         imageURL: {
-            uri: 'https://d3i5mgdwi2ze58.cloudfront.net/q8z45hoowjkdzz8ehp0rcozm0u2n',
+            uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217',
         }
 
     },
@@ -203,43 +200,4 @@ const swap = [
         userId: 4,
         availability: "YES"
     },
-];
-
-const reviews = [
-    {
-        reviewId: 1,
-        review: "Good for long rides",
-        userId: 4,
-        indexId: 66
-    },
-    {
-        reviewId: 1,
-        review: "Absolute mind blown",
-        userId: 4,
-        indexId: 23
-    },
-    {
-        reviewId: 1,
-        review: "Recommended. Didnt feel like 6000 pages",
-        userId: 3,
-        indexId: 5
-    },
-    {
-        reviewId: 1,
-        review: "Love the theme",
-        userId: 3,
-        indexId: 7
-    },
-    {
-        reviewId: 1,
-        review: "Best thriller Ive read",
-        userId: 4,
-        indexId: 9
-    },
-    {
-        reviewId: 1,
-        review: "Not sure why _ would do that",
-        userId: 3,
-        indexId: 2
-    }
 ];

@@ -3,14 +3,12 @@ import { Button } from 'react-native-paper';
 
 import colours from '../style_constants/colours';
 
-const MyButton = ({ text, buttonAction, propStyle }) => {
+const MyButton = ({ text, buttonAction }) => {
     return (
         <Button 
             mode="contained" 
             color={colours.secondaryLight}
-            onPress={buttonAction}
-            style={propStyle}
-        >
+            onPress={buttonAction}>
             {text}
         </Button>
     )

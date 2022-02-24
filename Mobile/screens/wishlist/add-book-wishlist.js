@@ -2,7 +2,7 @@
 
 export default function addBooktoWishList (data) {
     console.log('data: ', data);
-    console.log(`adding ${data.indexId}`);
+    console.log(`removing ${data.indexId}`);
     let xx;
     
     // check if already in wishlist
@@ -13,7 +13,7 @@ export default function addBooktoWishList (data) {
             `Book already in wishlist!`,
             [              
                 {
-                text: 'OK'                
+                test: 'OK'                
                 }
             ]
         );
