@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { View, Text, TouchableHighlight } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -16,7 +16,6 @@ import SignUpScreen from './screens/signup';
 import BookDetailsScreen from './screens/book_details';
 import BookListScreen from './screens/book_list';
 import UploadBookScreen from './screens/upload_book';
-import UploadReviewScreen from './screens/upload_review';
 import SplashScreen from './components/splash';
 
 // Issue: When native stacks are nested inside material bottom tabs navigator (react-navigation), navigating between tabs back and forth causes a blank screen to appear.
@@ -25,42 +24,38 @@ import SplashScreen from './components/splash';
 
 const GeneralStack = createNativeStackNavigator();
 
-const GeneralStackScreen = () => {    
+const GeneralStackScreen = () => {
 
     return (
         <View style={{ flex: 1 }} collapsable={false}>
             <GeneralStack.Navigator
                 initialRouteName='Books'
+                screenOptions={{
+                    headerShown: true
+                }}
             >
                 <GeneralStack.Screen name="Book Loop" component={BookListScreen} />
-                <GeneralStack.Screen 
-                    name="Book Details" 
+                <GeneralStack.Screen
+                    name="Book Details"
                     component={BookDetailsScreen}
-                    screenOptions={{
-                        headerShown: false
-                    }} />
+                    options={{
+                        headerBackVisible: false,
+                        headerBackTitleVisible: false // not working on web emulator
+                        // headerLeft: () => {
+                        //     const navigation = useNavigation();
+                        //     let xx = '<';
+                        //     return (
+                        //         <TouchableHighlight onPress={() => navigation.goBack()} >
+                        //             <Text>{xx}</Text>
+                        //         </TouchableHighlight>
+                        //     )
+                        // }
+                    }}
+                />
             </GeneralStack.Navigator>
         </View>
     )
 }
-
-const UploadStack = createNativeStackNavigator();
-
-const UploadStackScreen = () => {
-    return (
-        <View style={{ flex: 1 }} collapsable={false}>
-            <UploadStack.Navigator
-                initialRouteName='Upload Book'
-                screenOptions={{
-                    headerShown: false
-                }}
-            >
-                <UploadStack.Screen name='Upload Book' component={UploadBookScreen} />
-                <UploadStack.Screen name="Upload Review" component={UploadReviewScreen} />
-            </UploadStack.Navigator>
-        </View>
-
-)};
 
 
 // For Paper's BottomNavigation:
@@ -82,7 +77,7 @@ const RootStackScreen = ({ userToken }) => {
         >
             <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                 <RootStack.Screen
-                    name='Book List'                    
+                    name='Book List'
                     component={GeneralStackScreen}
                     initialParams={{ userToken: userToken }}
                     options={{
@@ -116,7 +111,7 @@ const RootStackScreen = ({ userToken }) => {
 
                     <RootStack.Screen
                         name='Book Upload'
-                        component={UploadStackScreen}
+                        component={UploadBookScreen}
                         options={{
                             tabBarLabel: 'Book Upload',
                             tabBarIcon: ({ color }) => (
